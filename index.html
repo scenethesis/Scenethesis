@@ -60,23 +60,13 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Synthesizing interactive 3D scenes from text is essential for gaming, virtual reality, and embodied AI.
-            However, existing methods face several challenges. Learning-based approaches depend on small-scale indoor datasets,
-            limiting the scene diversity and layout complexity. While large language models (LLMs) can leverage diverse
-            text-domain knowledge, they struggle with spatial realism, often producing unnatural object placements that
-            fail to respect common sense.
+            Generating interactive 3D scenes from text requires not only synthesizing assets but also arranging them with spatial intelligence—support, affordances, and plausibility. However, training data for interactive scenes is dominated by a few indoor datasets, so learning-based methods overfit to in-distribution layouts and struggle to compose diverse arrangements (e.g., outdoor settings and small-on-large relations).  Meanwhile, LLM-based layout planners can propose diverse arrangements, but the lack of visual grounding often yields implausible placements that violate commonsense physics. 
           </p>
           <p>
-            Our key insight is that vision perception can bridge this gap by providing realistic spatial guidance that LLMs lack.
-            To this end, we introduce Scenethesis, a training-free agentic framework that integrates LLM-based scene planning
-            with vision-guided layout refinement. Given a text prompt, Scenethesis first employs an LLM to draft a coarse layout.
-            A vision module then refines it by generating an image guidance and extracting scene structure to capture inter-object relations.
-            Next, an optimization module iteratively enforces accurate pose alignment and physical plausibility, preventing
-            artifacts like object penetration and instability. Finally, a judge module verifies spatial coherence.
+            We propose Scenethesis, a training-free, agentic framework that couples LLM-based scene planning with vision-guided layout refinement. Given a text prompt, Scenethesis first drafts a coarse layout with an LLM; a vision module refines the layout and extracts scene structure to capture inter-object relations. A novel optimization stage enforces pose alignment and physical plausibility, and a final judge verifies spatial coherence and triggers targeted repair when needed.           
           </p>
           <p>
-            Comprehensive experiments show that Scenethesis generates diverse, realistic, and physically plausible 3D interactive scenes,
-            making it valuable for virtual content creation, simulation environments, and embodied AI research.
+            Across indoor and outdoor prompts, Scenethesis produces realistic, relation-rich, and physically plausible 3D interactive scenes, reducing collisions and stability failures compared to SOTA methods, making it practical for virtual content creation, simulation, and embodied AI.
           </p>
         </div>
       </div>
@@ -189,7 +179,7 @@
       <!-- Pipeline. -->
       <div class="column">
         <div class="content">
-          <h2 class="title is-3">Pipeline</h2>
+          <h2 class="title is-3 has-text-centered">Pipeline</h2>
           <p>
             Starting with a user-provided text prompt, Scenethesis begins with a coarse scene planning stage, where a large language model
             generates a list of objects commonly found in the specified scene and selects one object as the primary object. Scenethesis then
@@ -209,7 +199,7 @@
     <!-- Modules. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Modules</h2>
+        <h2 class="title is-3 has-text-centered">Modules</h2>
 
         <h3 class="title is-4">LLM Module: Coarse Scene Planning</h3>
         <div class="content has-text-justified">
