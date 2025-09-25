@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Scenethesis is a training-free agentic framework combining language and visual priors for realistic, physically plausible 3D scene generation from text prompts.">
+  <meta name="keywords" content="Scenethesis, 3D Scene Generation, Language and Vision, Agentic Framework">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scenethesis: A Language and Vision Agentic Framework for 3D Scene Generation</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Scenethesis</h1>
+          <h2 class="subtitle is-2 publication-title">A Language and Vision Agentic Framework for 3D Scene Generation</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay controls loop playsinline preload="metadata" height="100%">
+        <source src="./static/videos/teaser.mp4" type="video/mp4"> 
+      </video>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Synthesizing interactive 3D scenes from text is essential for gaming, virtual reality, and embodied AI.
+            However, existing methods face several challenges. Learning-based approaches depend on small-scale indoor datasets,
+            limiting the scene diversity and layout complexity. While large language models (LLMs) can leverage diverse
+            text-domain knowledge, they struggle with spatial realism, often producing unnatural object placements that
+            fail to respect common sense.
+          </p>
+          <p>
+            Our key insight is that vision perception can bridge this gap by providing realistic spatial guidance that LLMs lack.
+            To this end, we introduce Scenethesis, a training-free agentic framework that integrates LLM-based scene planning
+            with vision-guided layout refinement. Given a text prompt, Scenethesis first employs an LLM to draft a coarse layout.
+            A vision module then refines it by generating an image guidance and extracting scene structure to capture inter-object relations.
+            Next, an optimization module iteratively enforces accurate pose alignment and physical plausibility, preventing
+            artifacts like object penetration and instability. Finally, a judge module verifies spatial coherence.
+          </p>
+          <p>
+            Comprehensive experiments show that Scenethesis generates diverse, realistic, and physically plausible 3D interactive scenes,
+            making it valuable for virtual content creation, simulation environments, and embodied AI research.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">More Results</h2>
+    <div class="columns is-multiline is-centered">
+      <div class="column is-half">
+        <video class="lazy-video" autoplay loop muted playsinline width="100%" preload="none">
+          <source data-src="./static/videos/results-billiard.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered">A private billiard room for relax</p>
+      </div>
+      <div class="column is-half">
+        <video class="lazy-video" autoplay loop muted playsinline width="100%" preload="none">
+          <source data-src="./static/videos/results-reading.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered">A reading corner</p>
+      </div>
+      <div class="column is-half">
+        <video class="lazy-video" autoplay loop muted playsinline width="100%" preload="none">
+          <source data-src="./static/videos/results-beach.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered">A beautiful surf-fishing beach</p>
+      </div>
+      <div class="column is-half">
+        <video class="lazy-video" autoplay loop muted playsinline width="100%" preload="none">
+          <source data-src="./static/videos/results-warehouse.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered">A warehouse space</p>
+      </div>
+      <div class="column is-half">
+        <video class="lazy-video" autoplay loop muted playsinline width="100%" preload="none">
+          <source data-src="./static/videos/street1.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered">A relax street corner with a mailbox</p>
+      </div>
+      <div class="column is-half">
+        <video class="lazy-video" autoplay loop muted playsinline width="100%" preload="none">
+          <source data-src="./static/videos/statue1.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered">A quiet park bench at twilight</p>
+      </div>
+      <div class="column is-half">
+        <video class="lazy-video" autoplay loop muted playsinline width="100%" preload="none">
+          <source data-src="./static/videos/playground3.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered">A children playground</p>
+      </div>
+      <div class="column is-half">
+        <video class="lazy-video" autoplay loop muted playsinline width="100%" preload="none">
+          <source data-src="./static/videos/statue3.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered">A street corner with a statue</p>
+      </div>
+    </div>
+    <h4 class="title is-4 has-text-centered" style="margin-top: 1.5rem;">Different results given the same text prompt</h4>
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <video class="lazy-video" autoplay loop muted playsinline width="100%" preload="none">
+          <source data-src="./static/videos/results-playroom1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-half">
+        <video class="lazy-video" autoplay loop muted playsinline width="100%" preload="none">
+          <source data-src="./static/videos/results-playroom2.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <p class="has-text-centered">A children playroom</p>
+    <div class="columns is-centered" style="margin-top: 1rem;">
+      <div class="column is-half">
+        <video class="lazy-video" autoplay loop muted playsinline width="100%" preload="none">
+          <source data-src="./static/videos/results-garage1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-half">
+        <video class="lazy-video" autoplay loop muted playsinline width="100%" preload="none">
+          <source data-src="./static/videos/results-garage2.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <p class="has-text-centered">A car in garage</p>
+    <div class="columns is-centered" style="margin-top: 1rem;">
+      <div class="column is-half">
+        <video class="lazy-video" autoplay loop muted playsinline width="100%" preload="none">
+          <source data-src="./static/videos/results-gym1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-half">
+        <video class="lazy-video" autoplay loop muted playsinline width="100%" preload="none">
+          <source data-src="./static/videos/results-gym2.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <p class="has-text-centered">A home gym</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+      <!-- Pipeline. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Pipeline</h2>
+          <p>
+            Starting with a user-provided text prompt, Scenethesis begins with a coarse scene planning stage, where a large language model
+            generates a list of objects commonly found in the specified scene and selects one object as the primary object. Scenethesis then
+            designs a coarse layout and produces a detailed prompt of the scene. In the layout visual refinement stage, a vision module first
+            generates a detailed image, which serves as the guidance for layout optimization. The vision module then leverages different
+            off-the-shelf vision models to extract a scene graph with predicted 5DoF poses for the initial scene setup and retrieves relevant
+            3D assets and an environment map. Next, a novel optimization module iteratively enforces accurate pose alignment and physical
+            plausibility, preventing artifacts like object penetration and instability. Finally, a scene judge module verifies spatial coherence.
+          </p>
+          <img src="./static/images/pipeline.png" alt="Scenethesis pipeline" style="width:100%;height:auto;" />
+        </div>
+      </div>
+      <!--/ Pipeline. -->
+    </div>
+    <!--/ Pipeline section. -->
+
+    <!-- Modules. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Modules</h2>
+
+        <h3 class="title is-4">LLM Module: Coarse Scene Planning</h3>
+        <div class="content has-text-justified">
+          <p>
+            Based on the user prompt, the LLM generates a list of common object categories and an upsampled prompt describing a coarse spatial hierarchy.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video autoplay controls muted loop playsinline width="75%">
+            <source src="./static/videos/stage-1-coarse.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <h3 class="title is-4">Vision Module: Layout Visual Refinement</h3>
+        <div class="content has-text-justified">
+          <p>
+            Given the upsampled prompt and object categories, the vision module generates a detailed image as guidance, a scene graph with object poses, and retrieves assets including 3D objects and an environment map.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video autoplay controls muted loop playsinline width="75%">
+            <source src="./static/videos/stage-2-fine.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <h3 class="title is-4">Optimization Module: Physics-aware Optimization</h3>
+        <div class="content has-text-justified">
+          <p>
+            Scenethesis adjusts object dimensions, positions, and orientations to ensure spatial alignment and physical plausibility, preventing artifacts like penetration and instability.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video autoplay controls muted loop playsinline width="75%">
+            <source src="./static/videos/stage-3-optimization.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <h3 class="title is-4">Judge Module: Spatial Coherence Judgment</h3>
+        <div class="content has-text-justified">
+          <p>
+            A scene judge module verifies spatial coherence and triggers another iteration if needed.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video autoplay controls muted loop playsinline width="75%">
+            <source src="./static/videos/stage-4-check.mp4" type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This page borrows the <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> website template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
